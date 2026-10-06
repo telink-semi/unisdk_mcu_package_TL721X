@@ -1,0 +1,8 @@
+config TLK_CORE_TL721X
+    bool
+
+config TLK_CORE
+    default "TL721X" if TLK_CORE_TL721X
+
+orsource "soc/*/Kconfig.soc"
+orsource "boards/*/Kconfig.board"

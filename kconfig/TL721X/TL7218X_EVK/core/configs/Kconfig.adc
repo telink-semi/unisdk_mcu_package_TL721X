@@ -1,0 +1,20 @@
+menuconfig TLK_ADC
+    bool "ADC"
+    select TLK_GPIO
+
+
+if TLK_ADC
+
+config TLK_ADC_DMA
+    bool "Enable DMA support"
+    select TLK_DMA
+
+if TLK_PM
+
+config TLK_ADC_PM_DEVICE
+    bool "Enable PM support"
+    default y
+
+endif # TLK_PM
+
+endif # TLK_ADC

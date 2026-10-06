@@ -1,0 +1,6 @@
+menu "TRAP"
+
+config TLK_TRAP_ECALL_NEST
+    bool "Enable nesting into the ecall exception"
+
+endmenu

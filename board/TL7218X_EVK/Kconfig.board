@@ -1,0 +1,10 @@
+choice TLK_BOARD_CHOICE
+
+config TLK_BOARD_TL7218X_EVK
+    bool "TL7218X_EVK"
+    depends on TLK_SOC_TL7218X
+
+endchoice
+
+config TLK_BOARD
+    default "TL7218X_EVK" if TLK_BOARD_TL7218X_EVK

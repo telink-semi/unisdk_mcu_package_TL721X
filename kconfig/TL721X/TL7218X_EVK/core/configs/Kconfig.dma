@@ -1,0 +1,23 @@
+menuconfig TLK_DMA
+    bool "DMA"
+
+
+if TLK_DMA
+
+config TLK_DMA_IRQ
+    bool "Enable IRQ Support"
+    depends on TLK_PLIC
+
+
+if TLK_PM
+
+config TLK_DMA_PM_DEVICE
+    default y
+    bool "Enable PM Support"
+
+config TLK_DMA_PREVENT_SLEEP
+    bool "Prevent sleep if DMA channels busy"
+
+endif # TLK_PM
+
+endif # TLK_DMA

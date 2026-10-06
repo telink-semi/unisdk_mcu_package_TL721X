@@ -1,0 +1,81 @@
+menuconfig TLK_GPIO
+    bool "GPIO"
+
+
+if TLK_GPIO
+
+config TLK_GPIO_USE_PORT
+    def_bool n
+
+menu "Select enabled ports"
+
+
+config TLK_GPIO_PORT_0
+    bool
+
+config TLK_GPIO_PORT_A
+    select TLK_GPIO_PORT_0
+    select TLK_GPIO_USE_PORT
+    bool "Enable GPIO port A"
+    default y
+
+config TLK_GPIO_PORT_1
+    bool
+
+config TLK_GPIO_PORT_B
+    select TLK_GPIO_PORT_1
+    select TLK_GPIO_USE_PORT
+    bool "Enable GPIO port B"
+    default y
+
+config TLK_GPIO_PORT_2
+    bool
+
+config TLK_GPIO_PORT_C
+    select TLK_GPIO_PORT_2
+    select TLK_GPIO_USE_PORT
+    bool "Enable GPIO port C"
+    default y
+
+config TLK_GPIO_PORT_3
+    bool
+
+config TLK_GPIO_PORT_D
+    select TLK_GPIO_PORT_3
+    select TLK_GPIO_USE_PORT
+    bool "Enable GPIO port D"
+    default y
+
+config TLK_GPIO_PORT_4
+    bool
+
+config TLK_GPIO_PORT_E
+    select TLK_GPIO_PORT_4
+    select TLK_GPIO_USE_PORT
+    bool "Enable GPIO port E"
+    default y
+
+config TLK_GPIO_PORT_5
+    bool
+
+config TLK_GPIO_PORT_F
+    select TLK_GPIO_PORT_5
+    select TLK_GPIO_USE_PORT
+    bool "Enable GPIO port F"
+    default y
+
+endmenu
+
+
+if TLK_PM
+
+config TLK_GPIO_PM_DEVICE
+    bool "Enable PM Support"
+    default y
+
+config TLK_GPIO_PREVENT_SLEEP
+    bool "Prevent sleep if some output pin is enabled"
+
+endif # TLK_PM
+
+endif # TLK_GPIO

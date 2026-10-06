@@ -1,0 +1,25 @@
+menuconfig TLK_I2S
+    bool "I2S"
+    select TLK_GPIO
+    select TLK_DMA
+
+
+if TLK_I2S
+
+config TLK_I2S_USE_DEVICE
+    def_bool n
+
+
+menuconfig TLK_I2S0
+    bool "I2S0"
+    select TLK_I2S_USE_DEVICE
+
+menuconfig TLK_I2S1
+    bool "I2S1"
+    select TLK_I2S_USE_DEVICE
+
+menuconfig TLK_I2S2
+    bool "I2S2"
+    select TLK_I2S_USE_DEVICE
+
+endif # TLK_I2S

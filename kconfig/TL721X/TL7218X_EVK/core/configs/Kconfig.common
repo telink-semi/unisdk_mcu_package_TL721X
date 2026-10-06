@@ -1,0 +1,61 @@
+menuconfig TLK_CRITICAL_PRINT
+    bool "Enable critical printout"
+    select TLK_UART
+
+
+if TLK_CRITICAL_PRINT
+
+choice
+    prompt "UART number"
+
+config TLK_CRITICAL_PRINT_UART0
+    bool "UART0"
+    select TLK_UART0
+config TLK_CRITICAL_PRINT_UART1
+    bool "UART1"
+    select TLK_UART1
+config TLK_CRITICAL_PRINT_UART2
+    bool "UART2"
+    select TLK_UART2
+
+endchoice # UART number
+
+
+config TLK_CRITICAL_PRINT_UART
+    string
+    default TLK_UART0 if TLK_CRITICAL_PRINT_UART0
+    default TLK_UART1 if TLK_CRITICAL_PRINT_UART1
+    default TLK_UART2 if TLK_CRITICAL_PRINT_UART2
+
+
+config TLK_CRITICAL_PRINT_UART_BAUDRATE
+    int "Baudrate"
+    default 115200
+
+endif # TLK_CRITICAL_PRINT
+
+############################################################## TODO: review
+
+config TLK_BINARY_SIGNATURE_ADDRESS
+    hex
+    default 0x100
+
+config TLK_BINARY_SIGNATURE_CORE_NAME_SIZE
+    int
+    default 16
+
+config TLK_BINARY_SIGNATURE_SOC_NAME_SIZE
+    int
+    default 16
+
+config TLK_BINARY_SIGNATURE_SOC_CASE_NAME_SIZE
+    int
+    default 16
+
+config TLK_BINARY_SIGNATURE_SDK_VERSION_SIZE
+    int
+    default 48
+
+config TLK_BINARY_SIGNATURE_APP_VERSION_SIZE
+    int
+    default 48

@@ -1,0 +1,121 @@
+# Coordinates are in mm from the board's top-left corner, x to the right and
+# y downward, everything seen from the top (component) side.
+#
+# outline: the board edge as corner points, clockwise from the top-left.
+#   Straight edges only - cuts/chamfers are just extra points.
+#
+# connectors: 2-row pin headers.
+#   name       Label shown next to pin 1 (e.g. J1).
+#   at         Centre of pin 1, in mm.
+#   rotation   0 | 90 | 180 | 270, clockwise. At 0 the header runs to the
+#              right from pin 1 with the second row below it; other values
+#              rotate that around pin 1 (90: runs down, second row to the
+#              left of pin 1's row).
+#   pitch      Pin spacing in mm, optional (default 2.54).
+#   pin_count  Total pins (both rows), optional - defaults to the highest
+#              listed pin number. Unlisted pins are drawn as not connected.
+#   pins       Numbered zigzag across the rows: odd pins in pin 1's row,
+#              even pins in the other one.
+#              kind: gpio   + port_pin (e.g. PB2) - selectable, same pin as
+#                                                   in the SoC view
+#                    power  + label (e.g. 3V3)
+#                    ground + label (e.g. GND)
+#                    nc       not connected
+outline:
+  - [0, 0]
+  - [77, 0]
+  - [77, 67]
+  - [60, 67]
+  - [57, 70]
+  - [0, 70]
+
+connectors:
+  - name: J7
+    at: [6, 22] # x = actual x + 3
+    rotation: 90
+    pitch: 2.54
+    pin_count: 36
+    pins:
+      - { number: 1, kind: gpio, port_pin: PE3 }
+      - { number: 2, kind: gpio, port_pin: PE0 }
+      - { number: 3, kind: gpio, port_pin: PE4 }
+      - { number: 4, kind: gpio, port_pin: PE1 }
+      - { number: 5, kind: gpio, port_pin: PE5 }
+      - { number: 6, kind: gpio, port_pin: PE2 }
+      - { number: 7, kind: gpio, port_pin: PE6 }
+      - { number: 8, kind: gpio, port_pin: PF0 }
+      - { number: 9, kind: gpio, port_pin: PE7 }
+      - { number: 10, kind: gpio, port_pin: PF1 }
+      - { number: 11, kind: nc }
+      - { number: 12, kind: gpio, port_pin: PF2 }
+      - { number: 13, kind: nc }
+      - { number: 14, kind: gpio, port_pin: PF3 }
+      - { number: 15, kind: nc }
+      - { number: 16, kind: gpio, port_pin: PF4 }
+      - { number: 17, kind: nc }
+      - { number: 18, kind: gpio, port_pin: PF5 }
+      - { number: 19, kind: nc }
+      - { number: 20, kind: gpio, port_pin: PF6 }
+      - { number: 21, kind: nc }
+      - { number: 22, kind: gpio, port_pin: PF7 }
+      - { number: 23, kind: nc }
+      - { number: 24, kind: gpio, port_pin: PA0 }
+      - { number: 25, kind: nc }
+      - { number: 26, kind: gpio, port_pin: PA1 }
+      - { number: 27, kind: nc }
+      - { number: 28, kind: gpio, port_pin: PA2 }
+      - { number: 29, kind: nc }
+      - { number: 30, kind: gpio, port_pin: PA3 }
+      - { number: 31, kind: nc }
+      - { number: 32, kind: gpio, port_pin: PA4 }
+      - { number: 33, kind: nc }
+      - { number: 34, kind: gpio, port_pin: PA5 }
+      - { number: 35, kind: nc }
+      - { number: 36, kind: gpio, port_pin: PA6 }
+
+  - name: J6
+    at: [64, 15] # x = actual x + 3
+    rotation: 90
+    pitch: 2.54
+    pin_count: 40
+    pins:
+      - { number: 1, kind: nc }
+      - { number: 2, kind: gpio, port_pin: PB7 }
+      - { number: 3, kind: nc }
+      - { number: 4, kind: gpio, port_pin: PB6 }
+      - { number: 5, kind: gpio, port_pin: PB3 }
+      - { number: 6, kind: gpio, port_pin: PB5 }
+      - { number: 7, kind: gpio, port_pin: PB1 }
+      - { number: 8, kind: gpio, port_pin: PB4 }
+      - { number: 9, kind: gpio, port_pin: PB0 }
+      - { number: 10, kind: gpio, port_pin: PB2 }
+      - { number: 11, kind: gpio, port_pin: PC6 }
+      - { number: 12, kind: gpio, port_pin: PC4 }
+      - { number: 13, kind: gpio, port_pin: PC7 }
+      - { number: 14, kind: gpio, port_pin: PC5 }
+      - { number: 15, kind: nc }
+      - { number: 16, kind: gpio, port_pin: PC3 }
+      - { number: 17, kind: nc }
+      - { number: 18, kind: gpio, port_pin: PC2 }
+      - { number: 19, kind: nc }
+      - { number: 20, kind: gpio, port_pin: PC1 }
+      - { number: 21, kind: nc }
+      - { number: 22, kind: gpio, port_pin: PC0 }
+      - { number: 23, kind: nc }
+      - { number: 24, kind: gpio, port_pin: PD3 }
+      - { number: 25, kind: nc }
+      - { number: 26, kind: gpio, port_pin: PD2 }
+      - { number: 27, kind: nc }
+      - { number: 28, kind: gpio, port_pin: PD4 }
+      - { number: 29, kind: nc }
+      - { number: 30, kind: gpio, port_pin: PD6 }
+      - { number: 31, kind: nc }
+      - { number: 32, kind: gpio, port_pin: PD5 }
+      - { number: 33, kind: nc }
+      - { number: 34, kind: gpio, port_pin: PD7 }
+      - { number: 35, kind: nc }
+      - { number: 36, kind: gpio, port_pin: PD1 }
+      - { number: 37, kind: nc }
+      - { number: 38, kind: gpio, port_pin: PD0 }
+      - { number: 39, kind: nc }
+      - { number: 40, kind: gpio, port_pin: PD0 }
