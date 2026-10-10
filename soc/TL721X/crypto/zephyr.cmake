@@ -7,9 +7,7 @@
 # Variables expected from the caller:
 #   SOC_CHIP_BASE  - base path for this SoC chip
 
-# Dev mode only - in SDK mode (libraries/ exists) crypto ships as the
-# prebuilt lib<soc lib>-zephyr_crypto.a instead, linked from
-# zephyr/CMakeLists.txt.
+# Dev mode only - in SDK mode crypto is inside the prebuilt SoC library.
 if(CONFIG_TLK_CRYPTO AND NOT EXISTS "${UNISDK_BASE}/libraries")
 
 # Source globs — matching the native CMakeLists.txt patterns
